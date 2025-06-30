@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amr Hassan | Portfolio</title>
+
+  <!-- Favicon: User Icon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/456/456212.png" type="image/png">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --header-bg: #222;
+      --header-text: #fff;
+      --card-bg: #fff;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+      --header-bg: #000;
+      --header-text: #fff;
+      --card-bg: #2a2a2a;
+    }
+
+    * {
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 2rem 1rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      cursor: pointer;
+    }
+
+    .contact-icons {
+      margin: 1rem 0;
+    }
+
+    .contact-icons a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-icons img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      filter: brightness(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-icons a:hover img {
+      transform: scale(1.2);
+    }
+
+    nav a {
+      color: var(--header-text);
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      left: 0;
+      background-color: #007BFF;
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #007BFF;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--text-color);
+    }
+
+    .project {
+      background: var(--card-bg);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--header-bg);
+      color: var(--header-text);
+    }
+
+    .contact a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .resume-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resume-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+    }
+
+    .resume-button i {
+      margin-right: 6px;
+    }
+
+    .profile-pic {
+      width: 215px;
+      height: 215px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 1rem auto;
+      display: block;
+      border: 3px solid #007BFF;
+    }
+
+    .contact-icons a svg,
+    .contact-icons a img {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+      vertical-align: middle;
+    }
+
+    .contact-icons a:hover svg,
+    .contact-icons a:hover img {
+      transform: scale(1.2);
+    }
+
+    .certificates {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .certificates h2 {
+      color: var(--text-color);
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .certificate-item {
+      background: var(--card-bg);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s; /* Added transition */
+    }
+
+    .certificate-item:hover {
+      transform: translateY(-4px); /* Added hover effect */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Added hover effect */
+    }
+
+    .certificate-item h4 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .certificate-item p {
+      margin: 0.2rem 0;
+    }
+
+    .certificate-item a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .certificate-item a i {
+      margin-right: 5px;
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background-color: #555;
+      margin: 1.5rem 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      .project {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+      <i class="fas fa-moon"></i>
+    </button>
+    <h1>Amr Hassan Safieddine Nagy</h1>
+    <p>Software Engineer | Backend Developer</p>
+    <img src="https://avatars.githubusercontent.com/u/95133219?v=4" alt="Profile Picture" class="profile-pic">
+
+    <div class="contact-icons">
+      <a href="mailto:amrhsn74@gmail.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24" style="vertical-align: middle;">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/amrhsn74" target="_blank" title="GitHub">
+        <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" alt="GitHub" />
+      </a>
+      <a href="https://linkedin.com/in/amr-hassan-b02653231" target="_blank" title="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://wa.me/201282115735" target="_blank" title="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
+      <a href="https://wuzzuf.net/me/amr-hassan-ca1400c134" target="_blank" title="WUZZUF">
+        <img src="https://wuzzuf.net/favicon.ico" alt="WUZZUF" />
+      </a>
+    </div>
+
+    <nav>
+      <a href="#about">About</a><span> | </span>
+      <a href="#certificates">Certificates</a><span> | </span>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a Computer and Systems Engineering undergraduate with a solid foundation in software development and a growing focus on backend engineering. I have hands-on experience with C#, ASP.NET Core, and SQL, and have developed several projects involving RESTful APIs and secure system architecture. My background also includes training in cybersecurity and software testing, which has helped me build a well-rounded skill set in both development and quality assurance. I'm enthusiastic about technology, continuous learning, and contributing to impactful software solutions.</p>
+    <a class="resume-button" href="https://drive.google.com/file/d/1kG2pzVWDvuOYbs0EvJAcyVuGKLt5Kjv0/view?usp=sharing" target="_blank">
+      <i class="fa-solid fa-file-arrow-down"></i>Download My Resume (PDF)
+    </a>
+  </section>
+
+  <section id="certificates" class="certificates">
+    <h2>Courses & Certificates</h2>
+    
+    <div class="certificate-item">
+      <h4>ASP.NET Core Diploma</h4>
+      <p>Route Academy</p>
+      <a href="https://drive.google.com/file/d/1X6lSIsymw4t4b87ZqH_L1E0dMeqk4lBy/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-lines"></i>View Certificate</a>
+    </div>
+    
+    <div class="certificate-item">
+      <h4>Web Development with Python</h4>
+      <p>Sprints Sprints</p>
+      <a href="https://drive.google.com/file/d/1zsKXKmn_xCc86Ke6FJv6JlHg6J0oxVbL/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-lines"></i>View Certificate</a>
+    </div>
+    
+    <hr class="divider">
+    
+    <h3>Cybersecurity Fundamentals</h3>
+    <div class="certificate-item">
+      <p>ITI</p>
+      <a href="https://drive.google.com/file/d/1xG9jUKZe19eVDJ4RmmrVtc4tGFyaJ7LX/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-lines"></i>View Certificate</a>
+    </div>
+    
+    <hr class="divider">
+    
+    <h3>Software Testing & QA</h3>
+    <div class="certificate-item">
+      <p>ITI</p>
+      <a href="https://drive.google.com/file/d/1d0Ay8RSWxETaIQE4SZYkkfZGUi8W2mc7/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-lines"></i>View Certificate</a>
+    </div>
+    
+    <hr class="divider">
+    
+    <h3>Product Management</h3>
+    <div class="certificate-item">
+      <p>Sprints</p>
+      <a href="https://drive.google.com/file/d/1xO29ir7iYDL6UGsbT1AKZxRrNscjSjRE/view?usp=sharing" target="_blank"><i class="fa-solid fa-file-lines"></i>View Certificate</a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>E-Commerce Web API</h3>
+      <p><strong>Tech:</strong> ASP.NET Core, Redis, JWT</p>
+      <p>Developed a RESTful API for restaurant order management with role-based access and caching using Redis.</p>
+      <p><a href="https://github.com/amrhsn74/E-Commerce.Web" target="_blank">GitHub Repo</a></p>
+    </div>
+    <div class="project">
+      <h3>IKEA Management System</h3>
+      <p><strong>Tech:</strong> ASP.NET MVC, C#</p>
+      <p>Built a web system with JWT authentication and applied Unit of Work and Repository design patterns.</p>
+      <p><a href="https://github.com/amrhsn74/IKEASolution" target="_blank">GitHub Repo</a></p>
+    </div>
+    <div class="project">
+      <h3>Exam System</h3>
+      <p><strong>Tech:</strong> C#</p>
+      <p>OOP-based console application to create and evaluate different types of exams.</p>
+      <p><a href="https://github.com/amrhsn74/Exam" target="_blank">GitHub Repo</a></p>
+    </div>
+    <div class="project">
+      <h3>Hustle Muscle Gym</h3>
+      <p><strong>Tech:</strong> HTML, CSS, JS, PHP, MySQL</p>
+      <p>Full-stack gym management site with login system and role-based access control.</p>
+      <p><a href="https://github.com/amrhsn74/HMS" target="_blank">GitHub Repo</a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="contact">Email: <a href="mailto:amrhsn74@gmail.com">amrhsn74@gmail.com</a></p>
+    <p class="contact">GitHub: <a href="https://github.com/amrhsn74" target="_blank">github.com/amrhsn74</a></p>
+    <p class="contact">LinkedIn: <a href="https://linkedin.com/in/amr-hassan-b02653231" target="_blank">Amr-Hassan</a></p>
+    <p class="contact">WUZZUF: <a href="https://wuzzuf.net/me/amr-hassan-ca1400c134" target="_blank">Amr-Hassan</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Amr Hassan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.querySelector(".theme-toggle i");
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+      icon.classList.toggle("fa-sun");
+      icon.classList.toggle("fa-moon");
+    }
+  </script>
+</body>
+</html>
